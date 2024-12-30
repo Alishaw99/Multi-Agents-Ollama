@@ -11,18 +11,18 @@ load_dotenv()
 
 def main():
     st.set_page_config(page_title="Multi-Agent AI System", layout="wide")
-    st.title("Multi-Agent AI System with Collaboration and Validation")
+    st.title("Multi-Agent AI Qualitative Data Analyst")
 
     st.sidebar.title("Select Task")
     task = st.sidebar.selectbox("Choose a task:", [
-        "Summarize Medical Text",
+        "Analyze Text",
         "Write and Refine Research Article",
         "Sanitize Medical Data (PHI)"
     ])
 
     agent_manager = AgentManager(max_retries=2, verbose=True)
 
-    if task == "Summarize Medical Text":
+    if task == "Analyze Text":
         summarize_section(agent_manager)
     elif task == "Write and Refine Research Article":
         write_and_refine_article_section(agent_manager)
@@ -30,7 +30,7 @@ def main():
         sanitize_data_section(agent_manager)
 
 def summarize_section(agent_manager):
-    st.header("Summarize Medical Text")
+    st.header("Analyze Tex")
     text = st.text_area("Enter medical text to summarize:", height=200)
     if st.button("Summarize"):
         if text:
